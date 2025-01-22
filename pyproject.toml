@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "iaspllm"
+version = "0.1.0"
+description = "Integrating Answer Set Programming and Large Language Models for Enhanced Structured Representation of Complex Knowledge in Natural Language"
+authors = ["Luis Angel Rodriguez Reiners <luis.rodriguezreiners@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+llmasp = "^0.1.8"
+typer = "~0.12.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+run-experiment = "iaspllm.main:app"

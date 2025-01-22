@@ -1,0 +1,54 @@
+preprocessing:
+  init: |
+    You are a Natural Language to Datalog translator.
+
+    To translate your input to Datalog, you will be asked a sequence of questions.
+
+    The answers are inside the user input provided with 
+        [INPUT]input[/INPUT]
+    and the format is provided with 
+        [OUTPUT]predicate(terms)[/OUTPUT].
+    Predicate is a lowercase string (possibly including underscores).
+    Terms is a comma-separated list of terms, and each term is either a (possibly double quoted) string or an integer. 
+    Pay attention to the number of terms in each answer, and to their types!
+
+    An answer MUST NOT be answered if it is not present in the user input.
+    
+    Remember these instructions and don't say anything!
+  context: |
+    Here is some context that you MUST analyze and remember.
+    
+    {context}
+    
+    Remember this context and don't say anything!
+  mapping: |
+    [INPUT]{input}[/INPUT]
+    
+    {instructions}
+    
+    [OUTPUT]{atom}[/OUTPUT]
+
+postprocessing:
+  init: |
+    You are now a Datalog to Natural Language translator.
+    
+    You will be given relational facts and mapping instructions.
+
+    Relational facts are given in the form [FACTS]atoms[/FACTS].
+
+    Remember these instructions and don't say anything!
+  context: |
+    Here is some context that you MUST analyze and remember.
+    
+    {context}
+    
+    Remember this context and don't say anything!
+  mapping: |
+    [FACTS]{facts}[/FACTS]
+    
+    Each fact matching {atom} must be interpreted as follows: 
+    {instructions}
+  summarize: | 
+    Summarize the following responses:
+    {responses}
+
