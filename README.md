@@ -58,7 +58,7 @@ The commands for running the experiments with Llama models are similar to those 
 
 ## Authors
 
-Mario Alviano
-Lorenzo Grillo
-Fabrizio Lo Scudo
-Luis Angel Rodriguez Reiners
+* Mario Alviano
+* Lorenzo Grillo
+* Fabrizio Lo Scudo
+* Luis Angel Rodriguez Reiners
